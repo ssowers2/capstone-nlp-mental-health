@@ -5,7 +5,7 @@
 # WHY: Centralizes project configuration.
 
 [project]
-name = "nlp"               # CUSTOM: Package distribution name (use lowercase and dashes).
+name = "capstone-nlp-mental-health" # CUSTOM: Package distribution name (use lowercase and dashes).
 readme = "README.md"
 requires-python = ">=3.14"
 version = "0.1.0"
@@ -15,13 +15,14 @@ dependencies = [
     "datafun-toolkit", # WHY: Provides utilities for privacy-aware logging.
     "ipykernel",       # WHY: Provides the Python kernel used by Jupyter notebooks.
     "ipython",         # WHY: Enhanced interactive Python shell used by notebook kernels.
-    "requests",        # WHY: Simple HTTP client for retrieving web pages and APIs.
-    "beautifulsoup4",  # WHY: Parse HTML and extract structured data from web pages.
-    "lxml",            # WHY: Fast XML/HTML parser used by BeautifulSoup.
     "polars[rtcompat]", # WHY: Fast Rust-based dataframe library for text statistics and tabular analysis.
     "matplotlib",      # WHY: Core visualization library for plots used in exploratory analysis.
     "wordcloud",       # WHY: Quick visual exploration of word frequencies in text corpora.
     #"spacy", # WHY: Industrial-strength NLP library for tokenization and linguistic analysis.
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "nltk",
 ]
 
 [project.optional-dependencies]
@@ -55,7 +56,7 @@ exclude = [
 ]
 line-length = 88 # WHY: PEP 8 standard line length, wrap when possible.
 preview = false # WHY: Stable features only; avoid preview features.
-target-version = "py313" # WHY: Match latest supported Python version.
+target-version = "py314" # WHY: Match latest supported Python version.
 unsafe-fixes = false # WHY: Avoid potentially unsafe automatic fixes.
 
 [tool.ruff.format]

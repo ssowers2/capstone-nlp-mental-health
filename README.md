@@ -1,189 +1,175 @@
-# nlp-02-text-preprocessing
+# Mental Health Text Classification Using Natural Language Processing
 
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
-[![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
+[![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE)
 
-> Professional Python project for Web Mining and Applied NLP.
+> Capstone project for the Master of Science in Data Analytics at Northwest Missouri State University.
 
-Web Mining and Applied NLP focus on retrieving, processing, and analyzing text from the web and other digital sources.
-This course builds those capabilities through working projects.
+## Project Overview
 
-In the age of generative AI, durable skills are grounded in real work:
-setting up a professional environment,
-reading and running code,
-understanding the logic,
-and pushing work to a shared repository.
-Each project follows a similar structure based on professional Python projects.
-These projects are **hands-on textbooks** for learning Web Mining and Applied NLP.
+This capstone project applies Natural Language Processing (NLP) and supervised machine learning techniques to classify social media text into one of three categories:
 
-## This Project
+- Neutral
+- Depression
+- Suicidal Tendencies
 
-This project introduces **text preprocessing**.
+The project evaluates multiple machine learning classification models to determine how effectively text can be categorized based on linguistic patterns. The goal is to demonstrate how data analytics and NLP can support mental health research while recognizing that machine learning should supplement—not replace—professional clinical evaluation.
 
-The goal is to copy this repository,
-set up your environment,
-run the example analysis,
-and explore how raw text is cleaned and prepared
-for natural language processing.
+## Dataset
 
-You will run the example pipeline, read the code,
-and make small modifications to understand how
-the preprocessing workflow works.
+The project uses the Suicide Sentiment Analysis Dataset available through Kaggle.
 
-## Data
+The original dataset contains three CSV files representing:
 
-The example pipeline reads text records from a file in data/.
+- Neutral
+- Depression
+- Suicidal Tendencies
 
-We use Python to preprocesses the text by applying steps such as
-tokenization, normalization, punctuation removal,
-and stop word filtering.
-The results show how raw text changes as it moves
-through the preprocessing pipeline.
+The datasets are merged into a single processed dataset prior to analysis.
 
-## Working Files
+The merged dataset contains two primary attributes: TEXT (social media text) and LABEL (0 = Neutral, 1 = Depression, 2 = Suicidal Tendencies).
 
-You'll work with just these areas:
+Source:
+<https://www.kaggle.com/datasets/umar1103/suicide-sentiment-analysis-dataset>
 
-- **notebooks/** - Jupyter notebooks for exploration
-- **src/nlp/** - Python code (verifies .venv/)
-- **pyproject.toml** - update authorship, links, and dependencies
-- **zensical.toml** - update authorship and links
+## Project Structure
 
-## First: Follow These Instructions
-
-Follow the [step-by-step workflow guide](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/) to complete:
-
-1. Phase 1. **Start & Run**
-2. Phase 2. **Change Authorship**
-3. Phase 3. **Read & Understand**
-
-## Challenges
-
-Challenges are expected.
-Sometimes instructions may not quite match your operating system.
-When issues occur, share screenshots, error messages, and details about what you tried.
-Working through issues is an important part of implementing professional projects.
-
-## Success
-
-After completing Phase 1. **Start & Run**, you'll have your own GitHub project,
-running on your machine, and running the example will print out:
-
-```shell
-========================
-Pipeline executed successfully!
-========================
+```text
+data/
+├── raw/
+├── processed/
+├── docs/
+├── notebooks/
+├── src/
+└── README.md
 ```
 
-And a new file named `project.log` will appear in the project folder.
+## Technologies
 
-## Command Reference
+- Python
+- Jupyter Notebooks
+- pandas
+- NumPy
+- matplotlib
+- scikit-learn
+- NLTK / spaCy (if used)
+- Git
+- GitHub
 
-The commands below are used in the workflow guide above.
-They are provided here for convenience.
+## Project Workflow
 
-Follow the guide for the **full instructions**.
+1. Data collection
+2. Data validation
+3. Text preprocessing
+4. Exploratory data analysis
+5. Feature engineering
+6. Model development
+7. Model evaluation
+8. Results and conclusions
 
-<details>
-<summary>Show command reference</summary>
+## Repository Contents
 
-### In a machine terminal (open in your `Repos` folder)
+- data/raw/ – Original Kaggle datasets
+- data/processed/ – Processed datasets
+- notebooks/ – Jupyter notebooks
+- src/ – Python source code
+- docs/ – Supporting documentation
 
-After you get a copy of this repo in your own GitHub account,
-open a machine terminal in your `Repos` folder:
+## Results
+
+...
+
+## References
+
+...
+
+## Project Progress
+
+- [x] Repository created
+- [x] Development environment configured
+- [x] Dataset selected
+- [ ] Merge datasets
+- [ ] Data validation
+- [ ] Text preprocessing
+- [ ] Exploratory Data Analysis
+- [ ] Feature engineering
+- [ ] Logistic Regression
+- [ ] Naïve Bayes
+- [ ] Random Forest (optional)
+- [ ] Model evaluation
+- [ ] Final paper
+- [ ] Final presentation
+
+
+## Development Guide
+
+### Initial Setup (One-Time)
 
 ```shell
-# Replace username with YOUR GitHub username.
-git clone https://github.com/ssowers2/nlp-02-text-preprocessing
-cd nlp-02-text-preprocessing
-code .
-```
-
-### In a VS Code terminal
-
-```shell
+# Updates the uv tool itself
 uv self update
+
+# Pins the project to Python 3.14 by creating/updating the .python-version file.
+# If Python 3.14 isn't installed, uv can install it.
 uv python pin 3.14
-uv sync --extra dev --extra docs --upgrade
+
+# It creates the .venv virtual environment (if it doesn't already exist).
+# Installs all project dependencies from pyproject.toml.
+# Installs the development and documentation dependencies.
+# Updates packages if newer compatible versions are available.
+uv sync --extra dev --extra docs --upgrade //
 
 uvx pre-commit install
-git add -A
 uvx pre-commit run --all-files
-
-# Later, we install spacy data model and
-# en_core_web_sm = english, core, web, small
-# It's big: spacy+data ~200+ MB w/ model installed
-#           ~350–450 MB for .venv is normal for NLP
-# uv run python -m spacy download en_core_web_sm
-
-# First, run the module
-# IMPORTANT: Close each figure after viewing so execution continues
-uv run python -m nlp.text_preprocessing_case
-
-# Then, open the notebook.
-# IMPORTANT: Select the kernel and Run All:
-# notebooks/text_preprocessing_case.ipynb
-
-uv run ruff format .
-uv run ruff check . --fix
-uv run zensical build
-
-git add -A
-git commit -m "update"
-git push -u origin main
 ```
 
-</details>
+### Daily Workflow
 
-## Notes
+1. Open VS Code.
+2. Open the project folder.
+3. Open a terminal.
+4. Pull the latest changes (if applicable):
 
-- Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
-- Use `CTRL+f` to find (and replace) text within a file.
+```shell
+git pull
+```
 
-## Example Artifact (Output)
+5. Open the notebook or Python file.
+6. Select the `.venv` kernel in Jupyter.
+7. Run your code.
+8. Save your work.
 
-![Word Cloud Example](docs/images/word_cloud_example.png)
+### Before Committing
 
-## Project Modifications
+Format and lint your code:
 
-As part of the exploration phase, I made several small modifications to better understand how the preprocessing pipeline works.
+```shell
+uv run ruff format .
+uv run ruff check . --fix
+```
 
-### Input Change
-I modified the project by replacing the default input text file with a new dataset about **Yorkshire Terriers (Yorkies)**. This allowed me to analyze a topic that interested me and observe how the preprocessing pipeline behaves with different content.
+### Commit Changes
 
-### Output Change
-I updated the frequency summary to display the **top 5 most frequent cleaned tokens** instead of the original top 20 tokens. This change makes the results easier to read and focuses the output on the most common words in the dataset.
+```shell
+git add -A
+git commit -m "Describe your changes"
+git push
+```
 
-### Visualization Improvements
-I improved the bar chart visualizations by:
-- changing the bar color to **hot pink**
-- adding **data labels** to the bars to display the token counts
+### Running Python Modules
 
-### Observations
-After running the project with the new dataset and visualization changes, the token frequencies reflected the Yorkies topic. Words related to dogs and pet care appeared among the most frequent cleaned tokens. The updated charts made it easier to quickly identify the most common terms in the dataset.
+```shell
+uv run python -m <module_name>
+```
 
-## Insights from the Results
+### Running Jupyter Notebooks
 
-### Text Preprocessing Reduced the Number of Tokens
-The preprocessing summary shows that the raw text initially contained **77 tokens** before and after punctuatioon removal.
-After removing punctuation, the number of tokens remained the same.
-However, after removing stop words, the total number of tokens decreased to **58**.
-This indicates that many common words were filtered out during preprocessing.
+- Open the notebook.
+- Select the project's `.venv` kernel.
+- Click **Run All**.
 
-### Most Frequent Tokens Reflect the Topic of the Dataset
-The most frequent cleaned tokens were:
-- **yorkies**
-- **their**
-- **dogs**
-- **known**
-- **coats**
+### Updating Dependencies
 
-These words clearly relate to the subject of the dataset, which is **Yorkshire Terriers**.
-This shows that the preprocessing pipeline successfully highlighted the main topic of the text.
-
-### Visualizations Make Patterns Easier to Interpret
-The bar charts help visualize both the **token counts across preprocessing stages** and the **most frequent cleaned tokens**.
-The use of colors and data labels makes it easier to quickly interpret the results and compare token frequencies.
-
-### Areas to Improve
-- Consider other stop words to exclude such as "their".
+```shell
+uv sync
+```

@@ -2,53 +2,48 @@
 # CITATION.cff (How to cite this project)
 # ============================================================
 
-# REQ.UNIVERSAL: Professional open projects SHOULD include CITATION.cff.
-# WHY: Support correct citation and attribution.
-# ALT: Internal or private repositories may omit citation metadata.
-# CUSTOM: Update author, repository, license, and keyword fields as needed.
-# USAGE: See https://citation-file-format.github.io/ for details.
-
 cff-version: "1.2.0"
 type: software
 
-title: Web Mining and Applied NLP 01 Getting Started
-date-released: "2026-03-06"
+title: Mental Health Text Classification Using Natural Language Processing
+date-released: "2026-07-05"
 
 authors:
-  - family-names: Case
-    given-names: Denise M.
-    orcid: "https://orcid.org/0000-0001-6165-7389"
-    affiliation: "Northwest Missouri State University, USA"
   - family-names: Sowers
-    given-names: Sabriya S.
+    given-names: Sabriya F.
     affiliation: "Northwest Missouri State University, USA"
 
-repository-code: "https://github.com/ssowers2/nlp-02-text-preprocessing"
-url: "https://github.com/ssowers2/nlp-02-text-preprocessing"
+repository-code: "https://github.com/ssowers2/capstone-nlp-mental-health"
+url: "https://github.com/ssowers2/capstone-nlp-mental-health"
 license: MIT
 
 abstract: |
-  Web Mining and Applied NLP Example Project 1 - Getting started with
-  professional Python project structure and workflows.
+  Capstone project for the Master of Science in Data Analytics
+  at Northwest Missouri State University. This project applies
+  natural language processing and supervised machine learning
+  techniques to classify social media text into the categories
+  of Neutral, Depression, and Suicidal Tendencies using a
+  publicly available mental health text dataset.
 
 keywords:
-  # identity
-  - data analytics
-  - web mining
-  - applied natural language processing (NLP)
+  # Project domain
+  - natural language processing
+  - NLP
+  - machine learning
+  - text classification
+  - mental health
+  - depression
+  - suicide prevention
+  - sentiment analysis
 
-  # practices
-  - professional workflows
-  - reproducible workflows
-  - software quality
-
-  # tools and ecosystem
+  # Tools
   - python
+  - jupyter notebooks
+  - pandas
+  - scikit-learn
   - git
   - github
-  - pre-commit
   - uv
   - ruff
-  - zensical
 
-message: "If using this project, please cite it as described in this file."
+message: "If you use this project, please cite it using the metadata in this file."
