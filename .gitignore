@@ -16,6 +16,7 @@
 
 # WHY: Raw datasets can be downloaded from Kaggle and are too large for this repository.
 data/raw/
+data/processed/
 
 # WHY: Logs are useful during debugging and verification.
 # ALT: Comment if logs must be inspected or validated.

@@ -32,6 +32,8 @@ The merged dataset contains two primary attributes: TEXT (social media text) and
 Source:
 <https://www.kaggle.com/datasets/umar1103/suicide-sentiment-analysis-dataset>
 
+The CSV files required the latin1 encoding during import due to character encoding differences in the original dataset.
+
 ## Project Structure
 
 ```text
@@ -75,21 +77,13 @@ data/
 - src/ – Python source code
 - docs/ – Supporting documentation
 
-## Results
-
-...
-
-## References
-
-...
-
 ## Project Progress
 
 - [x] Repository created
 - [x] Development environment configured
 - [x] Dataset selected
-- [ ] Merge datasets
-- [ ] Data validation
+- [x] Merge datasets
+- [x] Data validation
 - [ ] Text preprocessing
 - [ ] Exploratory Data Analysis
 - [ ] Feature engineering
@@ -100,6 +94,36 @@ data/
 - [ ] Final paper
 - [ ] Final presentation
 
+## Data Preparation
+
+The original Kaggle dataset consisted of three separate CSV files representing the three classification categories:
+
+- Neutral
+- Depression
+- Suicidal Tendencies
+
+The datasets were imported into Python using pandas and validated prior to merging. The following data preparation steps were completed:
+
+- Loaded all three CSV datasets into separate pandas DataFrames.
+- Resolved a character encoding issue by importing the files using the `latin1` encoding.
+- Validated dataset dimensions, column names, and data types.
+- Removed an unnecessary `Unnamed: 2` column from the Depression dataset that resulted from the original file export.
+- Filled missing label values in the Neutral dataset with the appropriate class label (0).
+- Removed records containing missing text values because they cannot be used for NLP classification.
+- Merged the three datasets into a single dataset.
+- Verified the final class distribution after cleaning.
+- Saved the cleaned dataset to `data/processed/mental_health_text_dataset.csv`.
+
+### Data Quality Observations
+
+During validation, a small number of records contained character encoding artifacts (for example, malformed characters such as `Ã`). Most affected records remained readable and will be addressed during the text preprocessing phase. Severely corrupted or non-English records will be evaluated for removal if they do not contribute meaningful information to the English-language classification models.
+
+The final cleaned dataset contains:
+
+- **17,699 records**
+- **2 attributes**
+  - `Label` (target variable)
+  - `TEXT` (social media text)
 
 ## Development Guide
 
@@ -172,4 +196,90 @@ uv run python -m <module_name>
 
 ```shell
 uv sync
+```
+
+## Git Troubleshooting
+
+### Accidentally Pushed to the Wrong GitHub Repository
+
+If you clone an existing project to use as a template, Git will continue pointing to the original GitHub repository until the remote is changed.
+
+#### Check the current remote
+
+```shell
+git remote -v
+```
+
+Example:
+
+```text
+origin  https://github.com/ssowers2/capstone-nlp-mental-health.git (fetch)
+origin  https://github.com/ssowers2/capstone-nlp-mental-health.git (push)
+```
+
+#### Change the remote to a new GitHub repository
+
+```shell
+git remote set-url origin https://github.com/ssowers2/capstone-nlp-mental-health.git
+git remote -v
+git push -u origin main
+```
+
+### Restore an Existing Repository
+
+If changes were accidentally pushed to the wrong GitHub repository, restore it from a clean local copy.
+
+Verify you are in the correct local project folder:
+
+```shell
+git remote -v
+git status
+```
+
+If everything looks correct, overwrite the GitHub repository with your local version:
+
+```shell
+git push --force
+```
+
+**Only use `--force` when you intentionally want your local repository to replace the GitHub version.**
+
+### Large Dataset Won't Commit
+
+If Git blocks large raw datasets, keep them locally and ignore them.
+
+Add to `.gitignore`:
+
+```text
+data/raw/
+```
+
+Remove the files from Git tracking (they remain on your computer):
+
+```shell
+git rm --cached data/raw/Neutral.csv
+git rm --cached data/raw/Depression.csv
+git rm --cached data/raw/Suicadal_tendencies_data.csv
+```
+
+Then commit normally.
+
+### Useful Git Commands
+
+Check repository status:
+
+```shell
+git status
+```
+
+Check commit history:
+
+```shell
+git log --oneline
+```
+
+Check the connected GitHub repository:
+
+```shell
+git remote -v
 ```
