@@ -84,7 +84,7 @@ data/
 - [x] Dataset selected
 - [x] Merge datasets
 - [x] Data validation
-- [ ] Text preprocessing
+- [x] Text preprocessing
 - [ ] Exploratory Data Analysis
 - [ ] Feature engineering
 - [ ] Logistic Regression
@@ -124,6 +124,53 @@ The final cleaned dataset contains:
 - **2 attributes**
   - `Label` (target variable)
   - `TEXT` (social media text)
+
+# Data Cleaning and Preprocessing
+
+## Data Validation and Cleaning
+
+The original dataset consisted of three CSV files representing the **Neutral**, **Depression**, and **Suicidal Tendencies** classes. Each dataset was inspected to validate its structure, including:
+
+- Column names
+- Data types
+- Record counts
+- Missing values
+- Duplicate records
+
+Data cleaning included:
+
+- Removed the unnecessary `Unnamed: 2` column from the Depression dataset.
+- Imported the datasets using the `latin1` encoding to address character encoding inconsistencies.
+- Assigned missing labels in the Neutral dataset to the Neutral class (`0`).
+- Removed records containing missing text values.
+- Merged the three datasets into a single cleaned dataset.
+- Exported the cleaned dataset for preprocessing.
+
+**Cleaned dataset size:** **17,699 records**
+
+---
+
+## Text Preprocessing
+
+The cleaned dataset underwent several preprocessing steps to prepare the text for Natural Language Processing (NLP) and machine learning.
+
+Preprocessing included:
+
+- Removed conflicting duplicate records with inconsistent class labels.
+- Removed duplicate records with identical text and labels.
+- Repaired character encoding artifacts using the **ftfy** Python library.
+- Removed HTML tags, URLs, email addresses, user mentions, and common social media editorial markers.
+- Converted text to lowercase.
+- Replaced numeric values with a common `number` token.
+- Removed punctuation.
+- Standardized whitespace.
+- Tokenized and lemmatized text using the **spaCy** Python library.
+- Removed stop words while preserving important negation terms such as *no*, *not*, and *never*.
+- Removed records containing no meaningful processed text.
+
+The final processed dataset contains **15,774 records** and serves as the input for exploratory data analysis, feature engineering, and machine learning model development.
+
+---
 
 ## Development Guide
 
