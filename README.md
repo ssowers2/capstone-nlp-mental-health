@@ -13,7 +13,7 @@ This capstone project applies Natural Language Processing (NLP) and supervised m
 - Depression
 - Suicidal Tendencies
 
-The project evaluates multiple machine learning classification models to determine how effectively text can be categorized based on linguistic patterns. The goal is to demonstrate how data analytics and NLP can support mental health research while recognizing that machine learning should supplement—not replace—professional clinical evaluation.
+The project evaluates multiple supervised machine learning models to determine how effectively text can be categorized based on linguistic patterns. The goal is to demonstrate how data analytics and NLP can support mental health research while recognizing that machine learning should supplement—not replace—professional clinical evaluation.
 
 ## Dataset
 
@@ -54,7 +54,9 @@ data/
 - NumPy
 - matplotlib
 - scikit-learn
-- NLTK / spaCy (if used)
+- spaCy
+- NLTK
+- ftfy
 - Git
 - GitHub
 
@@ -62,10 +64,10 @@ data/
 
 1. Data collection
 2. Data validation
-3. Text preprocessing
-4. Exploratory data analysis
+3. Data cleaning and preprocessing
+4. Exploratory data analysis (EDA)
 5. Feature engineering
-6. Model development
+6. Model training
 7. Model evaluation
 8. Results and conclusions
 
@@ -85,11 +87,9 @@ data/
 - [x] Merge datasets
 - [x] Data validation
 - [x] Text preprocessing
-- [ ] Exploratory Data Analysis
+- [x] Exploratory Data Analysis (EDA)
 - [ ] Feature engineering
-- [ ] Logistic Regression
-- [ ] Naïve Bayes
-- [ ] Random Forest (optional)
+- [ ] Model training
 - [ ] Model evaluation
 - [ ] Final paper
 - [ ] Final presentation
@@ -169,6 +169,27 @@ Preprocessing included:
 - Removed records containing no meaningful processed text.
 
 The final processed dataset contains **15,774 records** and serves as the input for exploratory data analysis, feature engineering, and machine learning model development.
+
+## Exploratory Data Analysis (EDA)
+
+Exploratory Data Analysis (EDA) was performed to better understand the structure and characteristics of the preprocessed dataset before feature engineering and model development.
+
+The analysis included:
+
+- Dataset validation
+- Class distribution analysis
+- Text length statistics and boxplots
+- Word frequency analysis
+- Bigram analysis
+- Qualitative word cloud visualization
+
+### Key Findings
+
+- The final preprocessed dataset contains **15,774** records.
+- No missing values or duplicate records remained after preprocessing.
+- The three classes are relatively balanced, reducing concerns about severe class imbalance.
+- Depression posts contain substantially longer narratives than Neutral posts.
+- Common language patterns and multi-word expressions were identified through word frequency and bigram analysis, providing insight into contextual language within the dataset.
 
 ---
 
