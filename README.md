@@ -25,9 +25,13 @@ The original dataset contains three CSV files representing:
 - Depression
 - Suicidal Tendencies
 
-The datasets are merged into a single processed dataset prior to analysis.
+The datasets are merged into a single processed dataset prior to analysis. The merged dataset contains two primary attributes:
 
-The merged dataset contains two primary attributes: TEXT (social media text) and LABEL (0 = Neutral, 1 = Depression, 2 = Suicidal Tendencies).
+- `TEXT` – Social media text
+- `Label`
+  - 0 = Neutral
+  - 1 = Depression
+  - 2 = Suicidal Tendencies
 
 Source:
 <https://www.kaggle.com/datasets/umar1103/suicide-sentiment-analysis-dataset>
@@ -37,12 +41,27 @@ The CSV files required the latin1 encoding during import due to character encodi
 ## Project Structure
 
 ```text
-data/
-├── raw/
-├── processed/
+capstone-nlp-mental-health/
+│
+├── data/
+│   ├── raw/
+│   ├── interim/
+│   └── processed/
+│
 ├── docs/
+│
+├── models/
+│   └── tfidf_vectorizer.joblib
+│
 ├── notebooks/
+│   ├── 01_data_validation_cleaning.ipynb
+│   ├── 02_text_preprocessing.ipynb
+│   ├── 03_exploratory_data_analysis.ipynb
+│   ├── 04_feature_engineering.ipynb
+│   └── 05_predictive_modeling.ipynb
+│
 ├── src/
+│
 └── README.md
 ```
 
@@ -76,6 +95,7 @@ data/
 - data/raw/ – Original Kaggle datasets
 - data/processed/ – Processed datasets
 - notebooks/ – Jupyter notebooks
+- models/ – Saved machine learning artifacts
 - src/ – Python source code
 - docs/ – Supporting documentation
 
@@ -88,11 +108,10 @@ data/
 - [x] Data validation
 - [x] Text preprocessing
 - [x] Exploratory Data Analysis (EDA)
-- [ ] Feature engineering
-- [ ] Model training
-- [ ] Model evaluation
-- [ ] Final paper
-- [ ] Final presentation
+- [x] Feature engineering
+- [ ] Predictive Modeling
+- [ ] Model Evaluation
+- [ ] Final Report
 
 ## Data Preparation
 
@@ -193,6 +212,31 @@ The analysis included:
 
 ---
 
+## Feature Engineering
+
+The cleaned and preprocessed text was transformed into numerical features using Term Frequency–Inverse Document Frequency (TF-IDF). This technique converts text into sparse numerical vectors that reflect the relative importance of words within each document while reducing the influence of commonly occurring terms.
+
+Feature engineering included:
+
+- Splitting the dataset into training (80%) and testing (20%) subsets using stratified sampling
+- Applying TF-IDF vectorization to the preprocessed text
+- Learning the vocabulary from the training data only to prevent data leakage
+- Transforming both training and testing datasets into sparse feature matrices
+- Inspecting the resulting sparse feature matrices and learned vocabulary
+- Saving the fitted TF-IDF vectorizer for reuse during predictive modeling
+
+## Project Highlights
+
+- Validated and cleaned over 15,000 text records
+- Performed NLP text preprocessing including normalization, tokenization, stop word removal, and lemmatization
+- Conducted exploratory data analysis to examine class distributions, text characteristics, and word frequencies
+- Engineered machine learning features using TF-IDF vectorization
+- Saved reusable TF-IDF vectorization artifacts for predictive modeling
+
+## Upcoming Work
+
+The next phase of the project focuses on training and evaluating multiple supervised machine learning models using the TF-IDF feature matrices. Model performance will be compared using standard classification metrics to determine the most effective approach for identifying mental health-related text.
+
 ## Development Guide
 
 ### Initial Setup (One-Time)
@@ -209,7 +253,7 @@ uv python pin 3.14
 # Installs all project dependencies from pyproject.toml.
 # Installs the development and documentation dependencies.
 # Updates packages if newer compatible versions are available.
-uv sync --extra dev --extra docs --upgrade //
+uv sync --extra dev --extra docs --upgrade
 
 uvx pre-commit install
 uvx pre-commit run --all-files
