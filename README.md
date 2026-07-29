@@ -109,7 +109,7 @@ capstone-nlp-mental-health/
 - [x] Text preprocessing
 - [x] Exploratory Data Analysis (EDA)
 - [x] Feature engineering
-- [ ] Predictive Modeling
+- [x] Predictive Modeling
 - [ ] Model Evaluation
 - [ ] Final Report
 
@@ -224,6 +224,35 @@ Feature engineering included:
 - Transforming both training and testing datasets into sparse feature matrices
 - Inspecting the resulting sparse feature matrices and learned vocabulary
 - Saving the fitted TF-IDF vectorizer for reuse during predictive modeling
+
+## Predictive Modeling
+
+The final phase of the project developed and evaluated supervised machine learning models for classifying mental health-related social media posts. Text was transformed into numerical features using a previously trained TF-IDF vectorizer, and multiple classification algorithms were evaluated using an 80/20 stratified train-test split.
+
+Models evaluated included:
+
+- Logistic Regression
+- Multinomial Naïve Bayes
+- Linear Support Vector Machine (Linear SVM)
+- Random Forest
+
+Model performance was evaluated using:
+
+- Accuracy
+- Weighted Precision
+- Weighted Recall
+- Weighted F1-Score
+
+Logistic Regression and Linear SVM achieved the highest overall accuracy (88.4%). Logistic Regression was selected as the final model because it provided strong, balanced classification performance while supporting probability estimates and straightforward interpretation.
+
+## Model Performance
+
+| Model | Accuracy |
+|--------------------------|---------:|
+| Logistic Regression | **88.40%** |
+| Linear Support Vector Machine | **88.40%** |
+| Random Forest | **86.21%** |
+| Multinomial Naïve Bayes | **81.62%** |
 
 ## Project Highlights
 
