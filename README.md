@@ -44,21 +44,22 @@ The CSV files required the latin1 encoding during import due to character encodi
 capstone-nlp-mental-health/
 │
 ├── data/
+│   ├── processed/
 │   ├── raw/
-│   ├── interim/
-│   └── processed/
 │
 ├── docs/
 │
 ├── models/
+│   └── best_model.joblib
 │   └── tfidf_vectorizer.joblib
 │
 ├── notebooks/
-│   ├── 01_data_validation_cleaning.ipynb
+│   ├── 01_data_preparation.ipynb
 │   ├── 02_text_preprocessing.ipynb
 │   ├── 03_exploratory_data_analysis.ipynb
 │   ├── 04_feature_engineering.ipynb
 │   └── 05_predictive_modeling.ipynb
+│   └── 06_interpretation_of_results.ipynb
 │
 ├── src/
 │
