@@ -1,54 +1,67 @@
-# Glossary
+## Natural Language Processing (NLP)
 
-## Applied Natural Language Processing (NLP)
+Natural Language Processing uses computational methods to analyze, interpret, and transform human language.
 
-Applied Natural Language Processing (NLP) uses **computational techniques** to **analyze and work with human language**.
-Common tasks include:
+## Text Classification
 
-- extracting information from text
-- classifying documents
-- identifying topics or sentiment
-- summarizing or transforming text
+A supervised machine learning task that assigns text to one of several predefined categories.
 
-## Web Mining
+## TF-IDF
 
-Web mining is the practice of collecting and analyzing data from the web.
+Term Frequency–Inverse Document Frequency is a feature engineering method that converts text into numerical values based on how important each word is within a document and across the full dataset.
 
-Typical activities include:
+## Feature Engineering
 
-- retrieving web pages or APIs
-- extracting structured information from HTML
-- analyzing links, text, or metadata
-- building datasets for further analysis
+The process of transforming raw or processed data into numerical features that machine learning algorithms can use.
 
-## Project
+## Training Dataset
 
-A structured set of files and folders that work together to run code, store data, and produce outputs.
+The portion of the dataset used to teach a machine learning model.
 
-## Repository (repo)
+## Testing Dataset
 
-A version-controlled project folder (often hosted on GitHub) that tracks changes over time.
+The portion of the dataset used to evaluate model performance on unseen data.
 
-## Working Directory
+## Stratified Sampling
 
-The folder your terminal is currently operating in.
+A method of splitting data while preserving the proportion of each target class.
 
-## Path
+## Logistic Regression
 
-An address to a file or folder (example: `data/input.csv`).
+A linear classification algorithm used to estimate the probability that an observation belongs to a category.
 
-## Dataset
+## Multinomial Naïve Bayes
 
-A collection of data records used by a program.
+A probabilistic classification algorithm commonly used for text data.
 
-## Artifact
+## Linear Support Vector Machine
 
-A file produced by the program (for example results or reports).
+A linear classifier that identifies boundaries separating classes in high-dimensional feature space.
 
-## Logging
+## Random Forest
 
-Messages written by the program that record what it is doing.
+An ensemble learning algorithm that combines predictions from multiple decision trees.
 
-## README.md
+## Accuracy
 
-The front-page document that explains what a project is and how to run it.
+The proportion of all predictions that were correct.
+
+## Precision
+
+The proportion of predictions for a class that were correct.
+
+## Recall
+
+The proportion of actual observations in a class that the model correctly identified.
+
+## F1-Score
+
+A combined measure of precision and recall.
+
+## Confusion Matrix
+
+A table showing how many observations were correctly and incorrectly assigned to each class.
+
+## Model Artifact
+
+A saved machine learning object, such as a trained model or fitted TF-IDF vectorizer.

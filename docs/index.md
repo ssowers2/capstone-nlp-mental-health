@@ -1,18 +1,18 @@
-# Web Mining and Applied NLP
+# Mental Health Text Classification Using NLP
 
-This site provides documentation for this project.
-Use the navigation to explore module-specific materials.
+This site documents a capstone project that applies Natural Language Processing and supervised machine learning to classify social media text into three categories:
 
-## How-To Guide
+- Neutral
+- Depression
+- Suicidal Tendencies
 
-Many instructions are common to all our projects.
+The project includes data validation, text preprocessing, exploratory data analysis, TF-IDF feature engineering, predictive modeling, and interpretation of results.
 
-See
-[⭐ **Workflow: Apply Example**](https://denisecase.github.io/pro-analytics-02/workflow-b-apply-example-project/)
-to get these projects running on your machine.
+## Project Documentation
 
-## Project Documentation Pages (docs/)
-
-- **Home** - this documentation landing page
-- **Project Instructions** - instructions specific to this module
-- **Glossary** - project terms and concepts
+- **Project Overview** – purpose, scope, and workflow
+- **Methodology** – data preparation, preprocessing, feature engineering, and modeling
+- **Results** – model evaluation and interpretation
+- **Glossary** – key NLP, machine learning, and project terms
+- **GitHub Repository** – source code, notebooks, and supporting files
+- [View the GitHub repository](https://github.com/ssowers2/capstone-nlp-mental-health)

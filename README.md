@@ -48,6 +48,12 @@ capstone-nlp-mental-health/
 │   ├── raw/
 │
 ├── docs/
+│   └── index.md
+│   └── project-instructions.md
+│   ├── glossary.md
+│   ├── methodology.md
+│   ├── results.md
+│   └── figures/
 │
 ├── models/
 │   └── best_model.joblib

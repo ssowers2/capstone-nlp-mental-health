@@ -1,0 +1,17 @@
+site_name: Mental Health Text Classification
+
+site_description: Capstone project documentation for NLP and machine learning
+site_author: Sabriya F. Sowers
+
+repo_name: ssowers2/capstone-nlp-mental-health
+repo_url: https://github.com/ssowers2/capstone-nlp-mental-health
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Project Workflow: project-instructions.md
+  - Methodology: methodology.md
+  - Results: results.md
+  - Glossary: glossary.md
