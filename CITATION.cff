@@ -1,40 +1,42 @@
-# ============================================================
-# CITATION.cff (How to cite this project)
-# ============================================================
-
 cff-version: "1.2.0"
 type: software
 
 title: Mental Health Text Classification Using Natural Language Processing
-date-released: "2026-07-05"
+date-released: "2026-08-14"
 
 authors:
   - family-names: Sowers
     given-names: Sabriya F.
-    affiliation: "Northwest Missouri State University, USA"
+    affiliation: Northwest Missouri State University, USA
+    orcid: https://orcid.org/0000-0000-0000-0000
 
 repository-code: "https://github.com/ssowers2/capstone-nlp-mental-health"
 url: "https://github.com/ssowers2/capstone-nlp-mental-health"
 license: MIT
 
 abstract: |
-  Capstone project for the Master of Science in Data Analytics
-  at Northwest Missouri State University. This project applies
-  natural language processing and supervised machine learning
-  techniques to classify social media text into the categories
-  of Neutral, Depression, and Suicidal Tendencies using a
-  publicly available mental health text dataset.
+  This capstone project for the Master of Science in Data Analytics
+  at Northwest Missouri State University applies natural language
+  processing and supervised machine learning techniques to classify
+  mental health-related social media posts into the categories
+  Neutral, Depression, and Suicidal Tendencies. The project
+  demonstrates an end-to-end machine learning workflow including
+  data validation, text preprocessing, feature engineering,
+  predictive modeling, and interpretation of results.
 
 keywords:
-  # Project domain
   - natural language processing
-  - NLP
   - machine learning
   - text classification
+  - supervised learning
+  - logistic regression
+  - TF-IDF
   - mental health
   - depression
-  - suicide prevention
-  - sentiment analysis
+  - suicidal ideation
+  - social media
+  - scikit-learn
+  - python
 
   # Tools
   - python
@@ -46,4 +48,6 @@ keywords:
   - uv
   - ruff
 
-message: "If you use this project, please cite it using the metadata in this file."
+message: >
+  If you use this software in your research or other work,
+  please cite it using the metadata provided in this file.

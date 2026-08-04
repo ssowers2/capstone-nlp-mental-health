@@ -1,15 +1,3 @@
-# ============================================================
-# .gitignore (Keep unnecessary files out of the repository)
-# ============================================================
-# SOURCE: https://github.com/denisecase/templates
-
-# REQ.UNIVERSAL: All professional GitHub project repositories MUST include .gitignore.
-# WHY: Prevent committing generated artifacts, local state, secrets, and OS-specific files.
-# ALT: Repository may customize ignores, but MUST preserve universal safety rules.
-# CUSTOM: Logs may be temporarily committed for verification; keep ignored for
-# production use and security.
-
-
 # === Universal (all projects, all languages) ===
 
 # === Project Data ===

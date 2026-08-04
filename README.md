@@ -88,14 +88,12 @@ capstone-nlp-mental-health/
 
 ## Project Workflow
 
-1. Data collection
-2. Data validation
-3. Data cleaning and preprocessing
-4. Exploratory data analysis (EDA)
-5. Feature engineering
-6. Model training
-7. Model evaluation
-8. Results and conclusions
+1. Data Validation and Cleaning
+2. Text Preprocessing
+3. Exploratory Data Analysis (EDA)
+4. TF-IDF Feature Engineering
+5. Predictive Modeling
+6. Interpretation of Results
 
 ## Repository Contents
 
@@ -117,7 +115,7 @@ capstone-nlp-mental-health/
 - [x] Exploratory Data Analysis (EDA)
 - [x] Feature engineering
 - [x] Predictive Modeling
-- [ ] Model Evaluation
+- [x] Interpretation of Results
 - [ ] Final Report
 
 ## Data Preparation
@@ -254,24 +252,37 @@ Logistic Regression and Linear SVM achieved the highest overall accuracy (88.4%)
 
 ## Model Performance
 
-| Model | Accuracy |
-|--------------------------|---------:|
-| Logistic Regression | **88.40%** |
-| Linear Support Vector Machine | **88.40%** |
-| Random Forest | **86.21%** |
-| Multinomial Naïve Bayes | **81.62%** |
+| Model                   | Accuracy | Precision | Recall | F1-Score |
+| ----------------------- | -------: | --------: | -----: | -------: |
+| Linear SVM              |   0.8840 |    0.8843 | 0.8840 |   0.8838 |
+| Logistic Regression     |   0.8840 |    0.8858 | 0.8840 |   0.8834 |
+| Random Forest           |   0.8621 |    0.8636 | 0.8621 |   0.8620 |
+| Multinomial Naïve Bayes |   0.8162 |    0.8503 | 0.8162 |   0.8123 |
+
+### Model Performance Comparison
+
+![Model Performance](reports/figures/Figure_6_1_Model_Performance_Comparison.png)
+
+### Confusion Matrix
+
+![Confusion Matrix](reports/figures/Figure_6_2_Logistic_Regression_Confusion_Matrix.png)
+
+## Interpretation of Results
+
+Model performance was interpreted using a comparison of overall evaluation metrics and a confusion matrix for the selected Logistic Regression model.
+
+Key findings included:
+
+- Logistic Regression and Linear SVM achieved the highest overall classification accuracy (88.40%).
+- Logistic Regression was selected as the final predictive model because it combined strong predictive performance with good interpretability and support for probability estimates.
+- The confusion matrix showed that most posts were correctly classified across all three mental health categories.
+- The largest number of classification errors occurred when suicidal posts were predicted as Neutral, indicating an opportunity for future model improvement.
 
 ## Project Highlights
 
-- Validated and cleaned over 15,000 text records
-- Performed NLP text preprocessing including normalization, tokenization, stop word removal, and lemmatization
-- Conducted exploratory data analysis to examine class distributions, text characteristics, and word frequencies
-- Engineered machine learning features using TF-IDF vectorization
-- Saved reusable TF-IDF vectorization artifacts for predictive modeling
-
-## Upcoming Work
-
-The next phase of the project focuses on training and evaluating multiple supervised machine learning models using the TF-IDF feature matrices. Model performance will be compared using standard classification metrics to determine the most effective approach for identifying mental health-related text.
+- Evaluated four supervised machine learning models
+- Selected Logistic Regression as the final predictive model
+- Interpreted results using model comparison metrics and a confusion matrix
 
 ## Development Guide
 

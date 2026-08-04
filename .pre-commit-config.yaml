@@ -1,32 +1,3 @@
-# ============================================================
-# .pre-commit-config.yaml (Python Hygiene)
-# ============================================================
-# VARIANT: python-hygiene
-# SOURCE: https://github.com/denisecase/templates
-#
-# REQ: Professional Python projects SHOULD include a .pre-commit-config.yaml
-# to minimize git diffs and support collaboration.
-# WHY: Provide fast, consistent checks before committing code.
-#
-# OBS: These hooks use and do NOT override:
-#   - .editorconfig (whitespace / indentation)
-#   - .gitattributes (EOL normalization)
-#   - pyproject.toml (Python tool settings)
-#
-# OPTIONAL LOCAL USAGE (no repo venv required):
-#   You must have uv installed locally.
-#   Run these commands once in from the repo root to enable pre-commit:
-#
-#   uv self update
-#   uvx pre-commit install
-#   uvx pre-commit run --all-files
-#
-# This enables the pre-commit hooks for this project repo.
-# ALL subsequent commits in this repo will AUTOMATICALLY run these
-# pre-commit hooks, after `git add` and before `git commit`.
-#
-# NOTE: enabling pre-commit is optional. It is not needed to clone or commit.
-
 exclude: |
   (?x)^(
     \.DS_Store|
@@ -106,7 +77,7 @@ repos:
   # === REPO: RUFF PRE-COMMIT (for Python code) ===
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.5
+    rev: v0.16.1
     hooks:
       # === RUFF PRE-COMMIT CHECKS ===
       - id: ruff-format
