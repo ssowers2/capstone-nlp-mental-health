@@ -248,7 +248,7 @@ Model performance was evaluated using:
 - Weighted Recall
 - Weighted F1-Score
 
-Logistic Regression and Linear SVM achieved the highest overall accuracy (88.4%). Logistic Regression was selected as the final model because it provided strong, balanced classification performance while supporting probability estimates and straightforward interpretation.
+Logistic Regression and Linear SVM achieved the highest overall classification accuracy (88.40%). Although Linear SVM achieved a slightly higher weighted F1-score, Logistic Regression achieved the highest weighted precision while matching the highest overall accuracy. Based on these evaluation metrics and its interpretability, Logistic Regression was selected as the final predictive model.
 
 ## Model Performance
 
@@ -269,20 +269,15 @@ Logistic Regression and Linear SVM achieved the highest overall accuracy (88.4%)
 
 ## Interpretation of Results
 
-Model performance was interpreted using a comparison of overall evaluation metrics and a confusion matrix for the selected Logistic Regression model.
+The final Logistic Regression model was evaluated using overall classification metrics and a confusion matrix. Model performance was compared across four supervised machine learning algorithms using accuracy, weighted precision, weighted recall, and weighted F1-score.
 
-Key findings included:
-
-- Logistic Regression and Linear SVM achieved the highest overall classification accuracy (88.40%).
-- Logistic Regression was selected as the final predictive model because it combined strong predictive performance with good interpretability and support for probability estimates.
-- The confusion matrix showed that most posts were correctly classified across all three mental health categories.
-- The largest number of classification errors occurred when suicidal posts were predicted as Neutral, indicating an opportunity for future model improvement.
+The confusion matrix demonstrated that most posts were classified correctly, while also identifying that the largest number of classification errors occurred when Suicidal posts were predicted as Neutral. Based on the overall evaluation metrics and model interpretability, Logistic Regression was selected as the final predictive model.
 
 ## Project Highlights
 
-- Evaluated four supervised machine learning models
-- Selected Logistic Regression as the final predictive model
-- Interpreted results using model comparison metrics and a confusion matrix
+- Compared four supervised machine learning algorithms
+- Selected Logistic Regression as the final predictive model based on evaluation metrics
+- Interpreted model performance using a confusion matrix and classification metrics
 
 ## Development Guide
 
