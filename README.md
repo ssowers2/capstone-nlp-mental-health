@@ -1,5 +1,7 @@
 # Mental Health Text Classification Using Natural Language Processing
 
+Graduate Capstone Project (M.S. Data Analytics)
+
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
 [![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE)
 
@@ -36,7 +38,7 @@ The datasets are merged into a single processed dataset prior to analysis. The m
 Source:
 <https://www.kaggle.com/datasets/umar1103/suicide-sentiment-analysis-dataset>
 
-The CSV files required the latin1 encoding during import due to character encoding differences in the original dataset.
+The CSV files required the latin1 encoding during import due to character encoding differences in the original dataset. No additional data extraction was required because the publicly available dataset was already provided in CSV format suitable for analysis.
 
 ## Project Structure
 
@@ -86,6 +88,10 @@ capstone-nlp-mental-health/
 - Git
 - GitHub
 
+## Reproducibility
+
+This project follows a fully reproducible workflow using Python, uv, Git, and GitHub. All preprocessing, feature engineering, predictive modeling, and interpretation steps are documented through Jupyter notebooks, project documentation, and the accompanying capstone report.
+
 ## Project Workflow
 
 1. Data Validation and Cleaning
@@ -116,7 +122,7 @@ capstone-nlp-mental-health/
 - [x] Feature engineering
 - [x] Predictive Modeling
 - [x] Interpretation of Results
-- [ ] Final Report
+- [x] Final Report
 
 ## Data Preparation
 
@@ -209,11 +215,10 @@ The analysis included:
 
 ### Key Findings
 
-- The final preprocessed dataset contains **15,774** records.
-- No missing values or duplicate records remained after preprocessing.
-- The three classes are relatively balanced, reducing concerns about severe class imbalance.
-- Depression posts contain substantially longer narratives than Neutral posts.
-- Common language patterns and multi-word expressions were identified through word frequency and bigram analysis, providing insight into contextual language within the dataset.
+- Logistic Regression achieved **88.40%** overall classification accuracy.
+- Logistic Regression and Linear SVM were the highest-performing models.
+- The primary classification challenge involved distinguishing some Suicidal posts from Neutral posts.
+- TF-IDF feature engineering effectively captured meaningful language patterns across all three mental health categories.
 
 ---
 
@@ -248,7 +253,7 @@ Model performance was evaluated using:
 - Weighted Recall
 - Weighted F1-Score
 
-Logistic Regression and Linear SVM achieved the highest overall classification accuracy (88.40%). Although Linear SVM achieved a slightly higher weighted F1-score, Logistic Regression achieved the highest weighted precision while matching the highest overall accuracy. Based on these evaluation metrics and its interpretability, Logistic Regression was selected as the final predictive model.
+Logistic Regression and Linear SVM achieved the highest overall classification accuracy (88.40%). Although Linear SVM achieved a slightly higher weighted F1-score, Logistic Regression achieved the highest weighted precision while matching the highest overall accuracy. Based on these evaluation metrics, its interpretability, and its ability to generate probability estimates, Logistic Regression was selected as the final predictive model.
 
 ## Model Performance
 
@@ -271,13 +276,43 @@ Logistic Regression and Linear SVM achieved the highest overall classification a
 
 The final Logistic Regression model was evaluated using overall classification metrics and a confusion matrix. Model performance was compared across four supervised machine learning algorithms using accuracy, weighted precision, weighted recall, and weighted F1-score.
 
-The confusion matrix demonstrated that most posts were classified correctly, while also identifying that the largest number of classification errors occurred when Suicidal posts were predicted as Neutral. Based on the overall evaluation metrics and model interpretability, Logistic Regression was selected as the final predictive model.
+The confusion matrix demonstrated that most posts were classified correctly, while also identifying that the largest number of classification errors occurred when Suicidal posts were predicted as Neutral. These results indicate that distinguishing some suicidal language from neutral language remains the most challenging aspect of the classification task. Based on the overall evaluation metrics, interpretability, and probability estimates, Logistic Regression was selected as the final predictive model.
+
+## Key Findings
+
+Logistic Regression achieved 88.40% overall classification accuracy.
+Logistic Regression and Linear SVM were the highest-performing models.
+The primary classification challenge involved distinguishing some Suicidal posts from Neutral posts.
+TF-IDF feature engineering effectively captured language patterns across the three mental health categories.
+
+## Final Capstone Report
+
+The complete graduate capstone report is available here:
+
+📄 [Mental Health Text Classification Using Natural Language Processing (PDF)](report/Sowers_Capstone_Report.pdf)
+
+## Project Documentation
+
+Additional project documentation is available through GitHub Pages.
+
+📘 https://ssowers2.github.io/capstone-nlp-mental-health/
 
 ## Project Highlights
 
 - Compared four supervised machine learning algorithms
 - Selected Logistic Regression as the final predictive model based on evaluation metrics
 - Interpreted model performance using a confusion matrix and classification metrics
+- Natural Language Processing (NLP)
+- TF-IDF Feature Engineering
+- Supervised Machine Learning
+- Logistic Regression
+- Linear Support Vector Machine
+- Random Forest
+- Multinomial Naïve Bayes
+- Jupyter Notebooks
+- Python
+- MkDocs Documentation
+- GitHub Pages
 
 ## Development Guide
 
