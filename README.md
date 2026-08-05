@@ -314,6 +314,10 @@ Additional project documentation is available through GitHub Pages.
 - MkDocs Documentation
 - GitHub Pages
 
+## Academic Integrity
+
+This repository is shared for educational and portfolio purposes. If you use ideas or portions of this work, please provide appropriate attribution. Students should follow their institution's academic integrity policies and should not submit this work as their own.
+
 ## Development Guide
 
 ### Initial Setup (One-Time)
