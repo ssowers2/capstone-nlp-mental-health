@@ -47,18 +47,19 @@ capstone-nlp-mental-health/
 │
 ├── data/
 │   ├── processed/
-│   ├── raw/
+│   └── raw/
 │
 ├── docs/
-│   └── index.md
-│   └── project-instructions.md
+│   ├── figures/
 │   ├── glossary.md
+│   ├── index.md
 │   ├── methodology.md
+│   ├── project-instructions.md
 │   ├── results.md
-│   └── figures/
+│   └── Sowers_Capstone_Report.pdf
 │
 ├── models/
-│   └── best_model.joblib
+│   ├── best_model.joblib
 │   └── tfidf_vectorizer.joblib
 │
 ├── notebooks/
@@ -66,12 +67,18 @@ capstone-nlp-mental-health/
 │   ├── 02_text_preprocessing.ipynb
 │   ├── 03_exploratory_data_analysis.ipynb
 │   ├── 04_feature_engineering.ipynb
-│   └── 05_predictive_modeling.ipynb
+│   ├── 05_predictive_modeling.ipynb
 │   └── 06_interpretation_of_results.ipynb
 │
 ├── src/
 │
-└── README.md
+├── .github/
+├── LICENSE
+├── CITATION.cff
+├── mkdocs.yml
+├── pyproject.toml
+├── README.md
+└── requirements.txt
 ```
 
 ## Technologies
@@ -85,6 +92,11 @@ capstone-nlp-mental-health/
 - spaCy
 - NLTK
 - ftfy
+- Visual Studio Code
+- vscode-pdf (capstone paper viewing)
+- LaTeX
+- Overleaf
+- MkDocs
 - Git
 - GitHub
 
